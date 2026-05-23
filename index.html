@@ -104,6 +104,23 @@
       </div> -->
     </section>
 
+    <!-- ORACLE TEASER -->
+    <section class="oracle-teaser">
+      <div class="oracle-teaser-inner">
+        <div class="oracle-teaser-text">
+          <span class="eyebrow-dark">Don't know where to go</span>
+          <h2 class="oracle-teaser-heading">Let the Oracle read your state.</h2>
+          <p class="oracle-teaser-sub">Four questions. One destination. Completely yours.</p>
+        </div>
+        <button class="oracle-open-btn" id="oracleOpenBtn">
+          <span>Open the Oracle</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </section>
+
     <!-- DISCOVER -->
     <section class="discover">
       <div class="discover-header reveal">
@@ -375,6 +392,70 @@
         <span>Designed with intention</span>
       </div>
     </footer>
+
+    <!-- JOURNEY ORACLE -->
+    <div class="oracle" id="oracle" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="oracle-bg"></div>
+
+      <!-- QUESTION PHASE -->
+      <div class="oracle-inner" id="oracleInner">
+        <button class="oracle-close" id="oracleClose" aria-label="Close oracle">✕</button>
+
+        <div class="oracle-question-wrap" id="oracleQuestionWrap">
+          <span class="oracle-eyebrow">Journey Oracle</span>
+          <h2 class="oracle-question-text" id="oracleQuestionText"></h2>
+          <div class="oracle-options" id="oracleOptions"></div>
+        </div>
+
+        <div class="oracle-footer">
+          <div class="oracle-progress">
+            <span class="oracle-progress-dot active"></span>
+            <span class="oracle-progress-dot"></span>
+            <span class="oracle-progress-dot"></span>
+            <span class="oracle-progress-dot"></span>
+          </div>
+          <span class="oracle-counter" id="oracleCounter">1 / 4</span>
+        </div>
+      </div>
+
+      <!-- READING PHASE -->
+      <div class="oracle-reading" id="oracleReading">
+        <span class="oracle-reading-label">Reading your journey</span>
+        <div class="oracle-reading-bar">
+          <div class="oracle-reading-fill" id="oracleReadingFill"></div>
+        </div>
+      </div>
+
+      <!-- REVEAL PHASE -->
+      <div class="oracle-reveal" id="oracleReveal">
+        <div class="oracle-reveal-image">
+          <img id="oracleRevealImg" src="" alt="" />
+          <div class="oracle-reveal-img-overlay"></div>
+        </div>
+        <div class="oracle-reveal-content" id="oracleRevealContent">
+          <span class="oracle-reveal-eyebrow">Your destination is</span>
+          <h2 class="oracle-reveal-name" id="oracleRevealName"></h2>
+          <span class="oracle-reveal-subtitle" id="oracleRevealSubtitle"></span>
+          <p class="oracle-reveal-tagline" id="oracleRevealTagline"></p>
+          <p class="oracle-reveal-desc" id="oracleRevealDesc"></p>
+          <div class="oracle-reveal-tags" id="oracleRevealTags"></div>
+          <div class="oracle-reveal-meta">
+            <div class="oracle-reveal-meta-item">
+              <span class="oracle-meta-label">Best season</span>
+              <span class="oracle-meta-value" id="oracleRevealSeason"></span>
+            </div>
+            <div class="oracle-reveal-meta-item">
+              <span class="oracle-meta-label">Duration</span>
+              <span class="oracle-meta-value" id="oracleRevealDuration"></span>
+            </div>
+          </div>
+          <div class="oracle-reveal-actions">
+            <button class="btn primary">Explore This Journey</button>
+            <button class="oracle-retry-btn" id="oracleRetry">Read Again →</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- DESTINATION MODAL -->
     <div class="dest-modal" id="destModal" aria-hidden="true" role="dialog" aria-modal="true">
