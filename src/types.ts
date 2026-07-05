@@ -60,3 +60,51 @@ export interface ModalState {
   imgSrc: string
   title: string
 }
+
+export type JournalCategory = 'Culture' | 'Food' | 'Adventure' | 'Nature' | 'City' | 'Photography'
+
+export interface JournalArticle {
+  id: string
+  category: JournalCategory
+  title: string
+  excerpt: string
+  author: string
+  date: string
+  readTime: number
+  image: string
+  location: string
+}
+
+export interface TripDay {
+  label: string
+  title: string
+  activities: string[]
+}
+
+export type TripStatus = 'upcoming' | 'past'
+
+export interface Trip {
+  id: string
+  destination: string
+  country: string
+  image: string
+  status: TripStatus
+  startDate: string
+  endDate: string
+  duration: number
+  companions: number
+  budget: number
+  spent: number
+  itinerary: TripDay[]
+}
+
+export interface WishlistDest {
+  id: string
+  name: string
+  country: string
+  image: string
+  description: string
+  bestSeason: string
+  estimatedCost: string
+  tags: string[]
+}

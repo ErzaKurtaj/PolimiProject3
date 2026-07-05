@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
-    }
+    const handleScroll = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -14,12 +14,24 @@ export function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-left">
-        <span className="logo">WAVE</span>
+        <Link to="/" className="logo">WAVE</Link>
       </div>
       <ul className="nav-center">
-        <li><a href="#">Destinations</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Journal</a></li>
+        <li>
+          <Link to="/" className={pathname === '/' ? 'active' : ''}>
+            Destinations
+          </Link>
+        </li>
+        <li>
+          <Link to="/trips" className={pathname === '/trips' ? 'active' : ''}>
+            Trips
+          </Link>
+        </li>
+        <li>
+          <Link to="/journal" className={pathname === '/journal' ? 'active' : ''}>
+            Journal
+          </Link>
+        </li>
       </ul>
       <div className="nav-right">
         <img src="https://i.pravatar.cc/40" alt="profile" className="avatar" />
